@@ -3,11 +3,11 @@ import react from "@vitejs/plugin-react";
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 
-const githubPagesBase = process.env.VITE_GITHUB_PAGES_BASE ?? "/sarfraaj.github.io/";
+const githubPagesBase = process.env.VITE_GITHUB_PAGES_BASE ?? "./";
 const githubPagesEntry = fileURLToPath(new URL("./github-pages.html", import.meta.url));
 
 function normalizeBase(base: string | undefined) {
-  if (!base || base === ".") return "/";
+  if (!base || base === "." || base === "./") return "./";
   return `/${base.replace(/^\/+|\/+$/g, "")}/`.replace(/^\/\/$/, "/");
 }
 
