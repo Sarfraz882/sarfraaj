@@ -14,7 +14,7 @@ function normalizeBase(base: string | undefined) {
 }
 
 export default defineConfig({
-  base: normalizeBase(githubPagesBase),
+  base: "./",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
